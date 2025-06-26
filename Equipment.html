@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Safety Equipment - Pragati Fire Protection Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e53e3e",
+              secondary: "#1a202c",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      .product-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .custom-checkbox {
+          position: relative;
+          padding-left: 35px;
+          cursor: pointer;
+          user-select: none;
+      }
+
+      .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+
+      .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 24px;
+          width: 24px;
+          background-color: #fff;
+          border: 2px solid #e2e8f0;
+          border-radius: 4px;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+          border-color: #e53e3e;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+          background-color: #e53e3e;
+          border-color: #e53e3e;
+      }
+
+      .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+          left: 9px;
+          top: 5px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+    </style>
+      <!-- AOS CSS -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <!-- AOS JavaScript -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </head>
+    <body class="bg-white text-gray-800">
+      <!-- Initialize AOS -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          AOS.init({
+            duration: 800,
+            once: false,
+            offset: 50,
+            mirror: true,
+            disable: 'mobile',
+            startEvent: 'DOMContentLoaded',
+            disableMutationObserver: false,
+            delay: 0
+          });
+        });
+  
+        // Refresh AOS on scroll
+        window.addEventListener('scroll', function() {
+          AOS.refresh();
+        });
+      </script>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg mt-2 sm:mt-4 mx-2 sm:mx-4">
+                <div class="flex items-center justify-between py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6">
+                    <!-- Logo -->
+                    <a href="Index.html" class="flex items-center space-x-2">
+                      <img src="Images/logo.png" alt="Logo" class="h-12 w-auto">
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                        <a href="Index.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Home</a>
+                        <a href="About.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">About</a>
+                        <a href="Services.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Services</a>
+                        <a href="Equipment.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Equipment</a>
+                        <a href="Contact.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Contact</a>
+                    </nav>
+
+                    <!-- Emergency Contact -->
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="ri-phone-fill text-primary text-lg xl:text-xl"></i>
+                            <div class="ml-2">
+                                <p class="text-xs xl:text-sm text-gray-600">Emergency</p>
+                                <a href="tel:+91 7017266299" class="text-primary font-semibold text-sm xl:text-base">+91 7017266299</a>
+                            </div>
+                        </div>
+                        <a href="Contact.html" class="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary-dark transition-colors text-sm xl:text-base whitespace-nowrap">
+                            Request Service
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden text-gray-700 hover:text-primary transition-colors p-1.5" id="mobile-menu-button">
+                        <i class="ri-menu-line text-xl sm:text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <!-- Mobile Menu Content -->
+        <div class="fixed right-0 top-0 h-full w-full sm:w-3/4 md:w-1/2 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out left-auto">
+            <!-- Close Button -->
+            <div class="flex justify-end p-4">
+                <button id="close-menu" class="text-gray-700 hover:text-primary transition-colors">
+                    <i class="ri-close-line text-2xl sm:text-3xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="px-6 py-4 space-y-4">
+                <a href="Index.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Home</a>
+                <a href="About.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">About</a>
+                <a href="Services.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Services</a>
+                <a href="Equipment.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Equipment</a>
+                <a href="Contact.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Contact</a>
+            </div>
+
+            <!-- Mobile Emergency Contact -->
+            <div class="px-6 py-4 border-t">
+                <div class="flex items-center mb-4">
+                    <i class="ri-phone-fill text-primary text-xl"></i>
+                    <div class="ml-2">
+                        <p class="text-sm text-gray-600">Emergency</p>
+                        <a href="tel:+91 7017266299" class="text-primary font-semibold text-base">+91 7017266299</a>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <a href="Contact.html" class="block w-full text-center bg-primary text-white px-4 py-3 rounded-full hover:bg-primary-dark transition-colors text-base">
+                        Request Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuContent = mobileMenu.querySelector('div');
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden');
+            // Trigger reflow
+            mobileMenu.offsetHeight;
+            mobileMenuContent.classList.remove('translate-x-full');
+        }
+
+        function closeMenu() {
+            mobileMenuContent.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuButton.addEventListener('click', openMenu);
+        closeMenuButton.addEventListener('click', closeMenu);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on window resize if open
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                closeMenu();
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
+      <div class="container mx-auto px-4 mt-24" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Fire Safety Equipment Catalog</h1>
+          <p class="text-xl mb-8">
+            Browse our comprehensive selection of high-quality fire safety equipment and protection systems.
+            All products meet or exceed industry standards and come with our quality guarantee.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="bg-white py-6 border-b">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="flex flex-wrap items-center justify-between gap-4" data-aos="fade-up">
+          <div class="flex flex-wrap gap-4" data-aos="fade-up">
+            <button class="filter-btn bg-primary text-white px-4 py-2 rounded-full font-medium" data-filter="all">
+              All Products
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="extinguishers">
+              Fire Extinguishers
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="alarms">
+              Alarm Systems
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="sprinklers">
+              Sprinkler Systems
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="detection">
+              Detection Devices
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="suppression">
+              Suppression Systems
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium hover:bg-gray-200" data-filter="emergency">
+              Emergency Lighting
+            </button>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid" data-aos="fade-up">
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto" data-aos="fade-up">
+        <div class="p-6" data-aos="fade-up">
+          <div class="flex justify-between items-start mb-4" data-aos="fade-up">
+            <h2 id="modalTitle" class="text-2xl font-bold text-gray-900"></h2>
+            <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+              <i class="ri-close-line text-2xl"></i>
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
+            <div class="relative">
+              <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded-lg">
+            </div>
+            <div>
+              <div id="modalDescription" class="text-gray-600 mb-4"></div>
+              <div id="modalSpecs" class="space-y-2 mb-6"></div>
+              <div class="flex flex-wrap gap-4" data-aos="fade-up">
+                <button class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-red-700 transition-colors">
+                  Request Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+              <div class="flex items-center mb-4">
+                <a href="Index.html" class="flex items-center space-x-2">
+                  <img src="Images/fotter.png" alt="Logo" class="h-[150px] w-auto">
+              </a>
+              </div>
+              <p class="text-gray-400 mb-6">
+                Providing comprehensive fire protection solutions for commercial,
+                industrial, and residential properties since 2015.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-facebook-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-twitter-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
+              </div>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Services.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Equipment.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Equipment</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="About.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Contact.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+                
+              </ul>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Fire Safety Systems</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Equipment Installation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Maintenance & Inspection</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Compliance & Certification</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Training Programs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Risk Assessment</a
+                  >
+                </li>
+              </ul>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-map-pin-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400"
+                    >Shpo no 5,Super Plaza Market Infront of Great Value Mall Ramghat Road, Aligarh</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-phone-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">+91 7017266299</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-mail-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">info@pragatifire.com</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-time-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">Mon-Fri: 8:00 AM - 6:00 PM</span>
+                </li>
+              </ul>
+  
+              <div class="mt-6">
+                <h4 class="text-sm font-semibold mb-3">
+                  Subscribe to our newsletter
+                </h4>
+                <div class="flex">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    class="bg-gray-800 border-none text-white px-4 py-2 rounded-l focus:outline-none focus:ring-2 focus:ring-primary w-full"
+                  />
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-r hover:bg-red-700 transition-colors whitespace-nowrap"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div
+            class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+          >
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Pragati Fire Protection Services. All rights reserved.
+            </p>
+  
+            <div class="flex flex-wrap justify-center gap-4">
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Sitemap</a
+              >
+            </div>
+  
+            
+          </div>
+        </div>
+      </footer>
+
+    <script>
+      // Product data
+      const products = [
+        // Fire Extinguishers
+        {
+          id: 1,
+          name: "ABC Dry Chemical Extinguisher",
+          category: "extinguishers",
+          image: "Images/Equipments/ABC.jpg",
+          description: "02 kg- 09 kg capacity, UL rated 4-A:80-B:C",
+          price: "800-2000 Rs",
+          specs: [
+            "Capacity: 02 kg- 09 kg",
+            "UL Rating: 4-A:80-B:C",
+            "Operating Pressure: 195 PSI",
+            "Discharge Time: 10-15 seconds",
+            "Operating Temperature: -40°F to 120°F"
+          ]
+        },
+        {
+          id: 2,
+          name: "CO2 Fire Extinguisher",
+          category: "extinguishers",
+          image: "Images/Equipments/C02.jpeg",
+          description: "10 lb capacity, Class B:C rated",
+          price: "",
+          specs: [
+            "Capacity: 10 lbs",
+            "Class Rating: B:C",
+            "Operating Pressure: 850 PSI",
+            "Discharge Time: 8-10 seconds",
+            "Operating Temperature: -40°F to 120°F"
+          ]
+        },
+        {
+          id: 3,
+          name: "Water Mist Extinguisher",
+          category: "extinguishers",
+          image: "Images/Equipments/WaterMist.jpeg",
+          description: "6L capacity, Class A:C rated",
+          price: "",
+          specs: [
+            "Capacity: 6L",
+            "Class Rating: A:C",
+            "Operating Pressure: 145 PSI",
+            "Discharge Time: 12-15 seconds",
+            "Operating Temperature: -40°F to 120°F"
+          ]
+        },
+        {
+          id: 4,
+          name: "Wheeled Fire Extinguisher",
+          category: "extinguishers",
+          image: "Images/Equipments/Wheeled.jpg",
+          description: "50 lb capacity, UL rated 20-A:120-B:C",
+          price: "",
+          specs: [
+            "Capacity: 50 lbs",
+            "UL Rating: 20-A:120-B:C",
+            "Operating Pressure: 195 PSI",
+            "Discharge Time: 30-35 seconds",
+            "Operating Temperature: -40°F to 120°F"
+          ]
+        },
+        // Alarm Systems
+        {
+          id: 5,
+          name: "Addressable Fire Alarm Panel",
+          category: "alarms",
+          image: "Images/Equipments/Firepanel.jpg",
+          description: "64 zones, LCD display, networkable",
+          price: "",
+          specs: [
+            "Zones: 64",
+            "Display: 7\" LCD",
+            "Network: Ethernet",
+            "Battery Backup: 24 hours",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        {
+          id: 6,
+          name: "Smoke Detector",
+          category: "alarms",
+          image: "Images/Equipments/SmokeDetector.jpg",
+          description: "Photoelectric sensor, 10-year battery",
+          price: "",
+          specs: [
+            "Sensor Type: Photoelectric",
+            "Battery Life: 10 years",
+            "Interconnect: Yes",
+            "Test Button: Yes",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        // Sprinkler Systems
+        {
+          id: 7,
+          name: "Upright Sprinkler Head",
+          category: "sprinklers",
+          image: "Images/Equipments/Sprinkler.jpg",
+          description: "K5.6, 155°F, brass construction",
+          price: "",
+          specs: [
+            "K-Factor: 5.6",
+            "Temperature Rating: 155°F",
+            "Construction: Brass",
+            "Thread: 1/2\" NPT",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        {
+          id: 8,
+          name: "Pendent Sprinkler Head",
+          category: "sprinklers",
+          image: "Images/Equipments/SprinklerHead.jpeg",
+          description: "K5.6, 165°F, brass construction",
+          price: "",
+          specs: [
+            "K-Factor: 5.6",
+            "Temperature Rating: 165°F",
+            "Construction: Brass",
+            "Thread: 1/2\" NPT",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        // Detection Devices
+        {
+          id: 9,
+          name: "Heat Detector",
+          category: "detection",
+          image: "Images/Equipments/HeatDetactor.jpeg",
+          description: "Fixed temperature, 135°F",
+          price: "",
+          specs: [
+            "Type: Fixed Temperature",
+            "Temperature: 135°F",
+            "Response Time: < 30 seconds",
+            "Interconnect: Yes",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        {
+          id: 10,
+          name: "Hose Reel",
+          category: "extingushers",
+          image: "Images/Equipments/HoseReel.jpeg",
+          description: "Hose Reel, ",
+          price: "",
+          specs: [
+            "Sensor Type: Electrochemical",
+            "Battery Life: 10 years",
+            "Display: Digital",
+            "Alarm: 85dB",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        // Suppression Systems
+        {
+          id: 11,
+          name: "Clean Agent System",
+          category: "suppression",
+          image: "https://readdy.ai/api/search-image?query=Clean%20agent%20fire%20suppression%20system%20with%20control%20panel%20and%20nozzles.%20Professional%20fire%20safety%20equipment%20with%20clear%20labeling.%20Commercial-grade%20system%20with%20advanced%20features.&width=400&height=300&seq=equip11&orientation=landscape",
+          description: "FM-200, 100lb capacity",
+          price: "$4,999.99",
+          specs: [
+            "Agent: FM-200",
+            "Capacity: 100 lbs",
+            "Nozzles: 4",
+            "Control Panel: Digital",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        {
+          id: 12,
+          name: "Kitchen Hood System",
+          category: "suppression",
+          image: "https://readdy.ai/api/search-image?query=Kitchen%20hood%20fire%20suppression%20system%20with%20nozzles%20and%20control%20panel.%20Professional%20fire%20safety%20equipment%20with%20clear%20labeling.%20Commercial-grade%20system%20with%20advanced%20features.&width=400&height=300&seq=equip12&orientation=landscape",
+          description: "Wet chemical, 6 nozzles",
+          price: "$3,499.99",
+          specs: [
+            "Agent: Wet Chemical",
+            "Nozzles: 6",
+            "Tank: 6 gallons",
+            "Control Panel: Digital",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        // Emergency Lighting
+        {
+          id: 13,
+          name: "Emergency Exit Light",
+          category: "emergency",
+          image: "https://readdy.ai/api/search-image?query=Emergency%20exit%20light%20with%20LED%20indicators%20and%20battery%20backup.%20Professional%20fire%20safety%20equipment%20with%20clear%20labeling.%20Commercial-grade%20light%20with%20advanced%20features.&width=400&height=300&seq=equip13&orientation=landscape",
+          description: "LED, 90-minute battery",
+          price: "$89.99",
+          specs: [
+            "Type: LED",
+            "Battery: 90 minutes",
+            "Mounting: Wall/Ceiling",
+            "Voltage: 120V",
+            "Certification: UL/ULC Listed"
+          ]
+        },
+        {
+          id: 14,
+          name: "Emergency Flood Light",
+          category: "emergency",
+          image: "https://readdy.ai/api/search-image?query=Emergency%20flood%20light%20with%20LED%20array%20and%20battery%20backup.%20Professional%20fire%20safety%20equipment%20with%20clear%20labeling.%20Commercial-grade%20light%20with%20advanced%20features.&width=400&height=300&seq=equip14&orientation=landscape",
+          description: "LED, 3-hour battery",
+          price: "$149.99",
+          specs: [
+            "Type: LED",
+            "Battery: 3 hours",
+            "Mounting: Wall/Ceiling",
+            "Voltage: 120V",
+            "Certification: UL/ULC Listed"
+          ]
+        }
+      ];
+
+      // Function to create product cards
+      function createProductCard(product) {
+        return `
+          <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="${product.category}">
+            <div class="h-75 overflow-hidden">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold mb-1">${product.name}</h3>
+              <p class="text-sm text-gray-600 mb-3">${product.description}</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-semibold">${product.price}</span>
+                <button class="bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap" onclick="showProductDetails(${product.id})">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Function to load products
+      function loadProducts() {
+        const productsGrid = document.getElementById('products-grid');
+        productsGrid.innerHTML = products.map(product => createProductCard(product)).join('');
+      }
+
+      // Function to filter products
+      function filterProducts(category) {
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Function to show product details
+      function showProductDetails(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+
+        const modal = document.getElementById('productModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalSpecs = document.getElementById('modalSpecs');
+
+        modalTitle.textContent = product.name;
+        modalImage.src = product.image;
+        modalImage.alt = product.name;
+        modalDescription.textContent = product.description;
+        modalSpecs.innerHTML = product.specs.map(spec => `<p class="text-gray-600">${spec}</p>`).join('');
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      // Function to close modal
+      function closeModal() {
+        const modal = document.getElementById('productModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }
+
+      // Initialize
+      document.addEventListener('DOMContentLoaded', function() {
+        loadProducts();
+
+        // Add filter button click handlers
+        document.querySelectorAll('.filter-btn').forEach(button => {
+          button.addEventListener('click', function() {
+            const category = this.dataset.filter;
+            
+            // Update button styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+              btn.classList.remove('bg-primary', 'text-white');
+              btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            this.classList.remove('bg-gray-100', 'text-gray-700');
+            this.classList.add('bg-primary', 'text-white');
+
+            // Filter products
+            filterProducts(category);
+          });
+        });
+
+        // Add search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+          const cards = document.querySelectorAll('.product-card');
+          
+          cards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+
+        // Add sort functionality
+        const sortSelect = document.querySelector('select');
+        sortSelect.addEventListener('change', function() {
+          const value = this.value;
+          const productsGrid = document.getElementById('products-grid');
+          const cards = Array.from(productsGrid.children);
+
+          cards.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.text-primary').textContent.replace('$', ''));
+            const priceB = parseFloat(b.querySelector('.text-primary').textContent.replace('$', ''));
+
+            if (value === 'price-low') {
+              return priceA - priceB;
+            } else if (value === 'price-high') {
+              return priceB - priceA;
+            }
+            return 0;
+          });
+
+          cards.forEach(card => productsGrid.appendChild(card));
+        });
+
+        // Add modal close handlers
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        document.getElementById('productModal').addEventListener('click', function(e) {
+          if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeModal();
+        });
+      });
+    </script>
+  </body>
+</html> 

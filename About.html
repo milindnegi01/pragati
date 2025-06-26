@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Pragati Fire Protection Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e53e3e",
+              secondary: "#1a202c",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      .about-banner {
+          background-size: cover;
+          background-position: center;
+      }
+
+      .cta-section {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Images/About/Cta.jpg');
+          background-size: cover;
+          background-position: center;
+      }
+
+      .team-member:hover .member-overlay {
+          opacity: 1;
+      }
+
+      .timeline-item:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          left: 15px;
+          top: 30px;
+          bottom: -30px;
+          width: 2px;
+          background-color: #e53e3e;
+      }
+    </style>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Initialize AOS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          once: false,
+          offset: 50,
+          mirror: true,
+          disable: 'mobile',
+          startEvent: 'DOMContentLoaded',
+          disableMutationObserver: false,
+          delay: 0
+        });
+      });
+
+      // Refresh AOS on scroll
+      window.addEventListener('scroll', function() {
+        AOS.refresh();
+      });
+    </script>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg mt-2 sm:mt-4 mx-2 sm:mx-4">
+                <div class="flex items-center justify-between py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6">
+                    <!-- Logo -->
+                    <a href="Index.html" class="flex items-center space-x-2">
+                      <img src="Images/logo.png" alt="Logo" class="h-12 w-auto">
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                        <a href="Index.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Home</a>
+                        <a href="About.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">About</a>
+                        <a href="Services.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Services</a>
+                        <a href="Equipment.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Equipment</a>
+                        <a href="Contact.html" class="text-gray-700 hover:text-primary font-bold transition-colors text-sm xl:text-base">Contact</a>
+                    </nav>
+
+                    <!-- Emergency Contact -->
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="ri-phone-fill text-primary text-lg xl:text-xl"></i>
+                            <div class="ml-2">
+                                <p class="text-xs xl:text-sm text-gray-600">Emergency</p>
+                                <a href="tel:+91 7017266299" class="text-primary font-semibold text-sm xl:text-base">+91 7017266299</a>
+                            </div>
+                        </div>
+                        <a href="Contact.html" class="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary-dark transition-colors text-sm xl:text-base whitespace-nowrap">
+                            Request Service
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden text-gray-700 hover:text-primary transition-colors p-1.5" id="mobile-menu-button">
+                        <i class="ri-menu-line text-xl sm:text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <!-- Mobile Menu Content -->
+        <div class="fixed right-0 top-0 h-full w-full sm:w-3/4 md:w-1/2 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out left-auto">
+            <!-- Close Button -->
+            <div class="flex justify-end p-4">
+                <button id="close-menu" class="text-gray-700 hover:text-primary transition-colors">
+                    <i class="ri-close-line text-2xl sm:text-3xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="px-6 py-4 space-y-4">
+                <a href="Index.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Home</a>
+                <a href="About.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">About</a>
+                <a href="Services.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Services</a>
+                <a href="Equipment.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Equipment</a>
+                <a href="Contact.html" class="block text-gray-700 hover:text-primary font-bold transition-colors text-lg">Contact</a>
+            </div>
+
+            <!-- Mobile Emergency Contact -->
+            <div class="px-6 py-4 border-t">
+                <div class="flex items-center mb-4">
+                    <i class="ri-phone-fill text-primary text-xl"></i>
+                    <div class="ml-2">
+                        <p class="text-sm text-gray-600">Emergency</p>
+                        <a href="tel:+91 7017266299" class="text-primary font-semibold text-base">+91 7017266299</a>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <a href="Contact.html" class="block w-full text-center bg-primary text-white px-4 py-3 rounded-full hover:bg-primary-dark transition-colors text-base">
+                        Request Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuContent = mobileMenu.querySelector('div');
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden');
+            // Trigger reflow
+            mobileMenu.offsetHeight;
+            mobileMenuContent.classList.remove('translate-x-full');
+        }
+
+        function closeMenu() {
+            mobileMenuContent.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuButton.addEventListener('click', openMenu);
+        closeMenuButton.addEventListener('click', closeMenu);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on window resize if open
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+                closeMenu();
+            }
+        });
+    </script>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
+      <div class="container mx-auto px-4 mt-24" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center text-white" data-aos="fade-up">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+          <p class="text-xl mb-8">
+            Your trusted partner in comprehensive fire safety solutions since 2015.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section id="our-story" class="py-16 bg-white">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+          <p class="text-gray-600">
+            Founded with a mission to protect lives and property, Pragati Fire Protection Services has grown to become a leading provider of comprehensive fire safety solutions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Who We Are</h3>
+            <p class="text-gray-600 mb-6">
+              Pragati Fire Protection Services was established in 2015 by a team of experienced fire safety professionals with a vision to provide comprehensive fire protection solutions that prioritize safety, reliability, and customer satisfaction.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Over the years, we have grown from a small local business to a trusted regional provider of fire safety services, serving clients across multiple industries including commercial, residential, healthcare, hospitality, and government sectors.
+            </p>
+            <p class="text-gray-600">
+              Our team of certified professionals brings decades of combined experience in fire protection, ensuring that every project we undertake meets the highest standards of quality and compliance with all relevant regulations and codes.
+            </p>
+          </div>
+          <div>
+            <img src="Images/About/Fire-Inspection.png" alt="Pragati Fire Protection Team" class="rounded-lg shadow-lg w-full h-[500px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission & Values -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">Our Mission & Values</h2>
+          <p class="text-gray-600">
+            We are guided by a clear mission and strong core values that shape everything we do.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" data-aos="fade-up">
+          <div class="bg-white p-8 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-16 h-16 flex items-center justify-center bg-red-100 rounded-full mb-6" data-aos="fade-up">
+              <i class="ri-focus-3-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+            <p class="text-gray-600 mb-6">
+              To protect lives and property by providing the highest quality fire protection services and solutions that exceed industry standards and customer expectations.
+            </p>
+            <p class="text-gray-600">
+              We are committed to promoting a culture of safety through education, training, and the implementation of effective fire protection systems that help prevent, detect, and suppress fires.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-16 h-16 flex items-center justify-center bg-red-100 rounded-full mb-6" data-aos="fade-up">
+              <i class="ri-eye-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">Our Vision</h3>
+            <p class="text-gray-600 mb-6">
+              To be the most trusted and respected fire protection service provider, recognized for our expertise, integrity, and commitment to excellence in every aspect of our business.
+            </p>
+            <p class="text-gray-600">
+              We envision a future where fire-related incidents are minimized through proactive safety measures, advanced technology, and comprehensive education, contributing to safer communities and workplaces.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-shield-check-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Safety First</h3>
+            <p class="text-gray-600">
+              We prioritize safety in everything we do, ensuring that our solutions provide maximum protection for our clients and their properties.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-award-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Excellence</h3>
+            <p class="text-gray-600">
+              We strive for excellence in every aspect of our business, from the quality of our installations to the responsiveness of our customer service.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-heart-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Integrity</h3>
+            <p class="text-gray-600">
+              We conduct our business with honesty, transparency, and ethical practices, building trust with our clients and partners.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-team-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Teamwork</h3>
+            <p class="text-gray-600">
+              We believe in the power of collaboration, working together as a team and with our clients to achieve the best possible outcomes.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-customer-service-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Customer Focus</h3>
+            <p class="text-gray-600">
+              We are dedicated to understanding and meeting the unique needs of each client, providing personalized solutions and exceptional service.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:border-4 hover:border-primary transition-all duration-300" data-aos="fade-up">
+            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mb-4" data-aos="fade-up">
+              <i class="ri-lightbulb-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Innovation</h3>
+            <p class="text-gray-600">
+              We continuously seek new and better ways to enhance fire safety through advanced technologies, methods, and solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Our Leadership Team</h2>
+          <p class="text-gray-600" data-aos="fade-up">
+            Meet the experienced professionals who lead our company with expertise, vision, and dedication.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 ml-[260px] lg:grid-cols-4 gap-8" data-aos="fade-up">
+          <!-- Team Member 1 -->
+          <div class="team-member relative group" data-aos="fade-up">
+            <div class="relative overflow-hidden rounded-lg" data-aos="fade-up">
+              <img src="Images/Team/GajendraSingh.png" alt="Mr Gajendra Singh Raghav" class="w-full h-auto">
+              <div class="member-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+                <p class="text-white text-center mb-4">With over 25 years of experience in fire safety, leads The company with a focus on innovation and excellence.</p>
+                <div class="flex space-x-3">
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-facebook-fill"></i>
+                  </a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-mail-fill"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Mr Gajendra Singh Raghav</h3>
+              <p class="text-gray-600">Founder & CEO</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-member relative group" data-aos="fade-up">
+            <div class="relative overflow-hidden rounded-lg" data-aos="fade-up">
+              <img src="Images/6200475" alt="Rajat" class="w-full h-auto">
+              <div class="member-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+                <p class="text-white text-center mb-4">Rajat oversees all operations, ensuring our services meet the highest standards of quality and efficiency.</p>
+                <div class="flex space-x-3">
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-mail-fill"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Mr Rajat Raghav</h3>
+              <p class="text-gray-600">Director</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-member relative group" data-aos="fade-up">
+            <div class="relative overflow-hidden rounded-lg" data-aos="fade-up">
+              <img src="Images/62004" alt="Abhishek" class="w-full h-auto">
+              <div class="member-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+                <p class="text-white text-center mb-4">With a background in fire engineering, Abhishek leads our technical team in designing and implementing effective fire safety solutions.</p>
+                <div class="flex space-x-3">
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-mail-fill"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Mr  Abhishek Raghav</h3>
+              <p class="text-gray-600">Director</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <!-- <div class="team-member relative group" data-aos="fade-up">
+            <div class="relative overflow-hidden rounded-lg" data-aos="fade-up">
+              <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20young%20Indian%20woman%20in%20business%20attire%20with%20a%20friendly%20expression.%20The%20image%20shows%20a%20well-groomed%20sales%20executive%20with%20a%20warm%20smile%20against%20a%20neutral%20background.&width=400&height=500&seq=team4&orientation=portrait" alt="Ananya Singh" class="w-full h-auto">
+              <div class="member-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+                <p class="text-white text-center mb-4">Ananya builds strong relationships with our clients, ensuring their fire safety needs are met with personalized solutions.</p>
+                <div class="flex space-x-3">
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="ri-mail-fill"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-semibold">Ananya Singh</h3>
+              <p class="text-gray-600">Business Development Manager</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Our History -->
+    <section class="py-24 bg-white relative overflow-hidden" data-aos="fade-up">
+      <!-- Decorative Elements -->
+      <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl" data-aos="fade-up"></div>
+      <div class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl" data-aos="fade-up"></div>
+      
+      <div class="container mx-auto px-4 relative" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center mb-20" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-6 py-2 mb-6" data-aos="fade-up">
+            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            <span class="text-primary font-semibold">Our Evolution</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">The FireGuard Story</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            From humble beginnings to becoming a leading fire protection service provider, our journey has been defined by growth, innovation, and a commitment to excellence.
+          </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto" data-aos="fade-up">
+          <div class="relative" data-aos="fade-up">
+            <!-- Connecting Line -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/50 to-primary/30 transform -translate-x-1/2" data-aos="fade-up"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-32">
+              <!-- 2003 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-16">
+                    <div class="relative group">
+                      <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300"></div>
+                      <div class="relative bg-white p-8 rounded-2xl shadow-lg transform -skew-x-6 group-hover:skew-x-0 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center space-x-4 mb-6">
+                          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-primary">01</span>
+                          </div>
+                          <span class="text-primary font-semibold">2015</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Foundation</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                          Pragati Fire Protection Services was founded by Mr Gajendra Singh Raghav with a small team of 3 employees, focusing initially on fire extinguisher sales and maintenance for local businesses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 pl-16">
+                    <div class="relative">
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2007 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-16">
+                    <div class="relative">
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 pl-16">
+                    <div class="relative group">
+                      <div class="absolute -inset-4 bg-gradient-to-l from-primary/20 to-transparent rounded-2xl transform skew-x-6 group-hover:skew-x-0 transition-transform duration-300"></div>
+                      <div class="relative bg-white p-8 rounded-2xl shadow-lg transform skew-x-6 group-hover:skew-x-0 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center space-x-4 mb-6">
+                          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-primary">02</span>
+                          </div>
+                          <span class="text-primary font-semibold">2017</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Expansion of Services</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                          We expanded our service offerings to include fire alarm system installation and maintenance, growing our team to 15 certified technicians and engineers.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2010 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-16">
+                    <div class="relative group">
+                      <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300"></div>
+                      <div class="relative bg-white p-8 rounded-2xl shadow-lg transform -skew-x-6 group-hover:skew-x-0 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center space-x-4 mb-6">
+                          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-primary">03</span>
+                          </div>
+                          <span class="text-primary font-semibold">2020</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Regional Growth</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                          We opened our second office, expanding our service area to cover the entire state and adding sprinkler system design and installation to our service portfolio.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 pl-16">
+                    <div class="relative">
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2015 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-16">
+                    <div class="relative">
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 pl-16">
+                    <div class="relative group">
+                      <div class="absolute -inset-4 bg-gradient-to-l from-primary/20 to-transparent rounded-2xl transform skew-x-6 group-hover:skew-x-0 transition-transform duration-300"></div>
+                      <div class="relative bg-white p-8 rounded-2xl shadow-lg transform skew-x-6 group-hover:skew-x-0 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center space-x-4 mb-6">
+                          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-primary">04</span>
+                          </div>
+                          <span class="text-primary font-semibold">2022</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Industry Recognition</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                          Pragati Fire Protection Services received industry certification and recognition for excellence in fire safety services, becoming a preferred provider for major commercial and industrial clients.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2023 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-16">
+                    <div class="relative group">
+                      <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300"></div>
+                      <div class="relative bg-white p-8 rounded-2xl shadow-lg transform -skew-x-6 group-hover:skew-x-0 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center space-x-4 mb-6">
+                          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-primary">05</span>
+                          </div>
+                          <span class="text-primary font-semibold">2025</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Today and Beyond</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                          Today, with over 50 employees and a comprehensive range of fire protection services, we continue to grow while maintaining our commitment to quality, safety, and customer satisfaction.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 pl-16">
+                    <div class="relative">
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-8 h-8 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="absolute left-0 top-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Affiliations -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Certifications & Affiliations</h2>
+          <p class="text-gray-600">
+            We maintain the highest standards of quality and safety through industry certifications and professional affiliations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center text-center">
+            <img src="" alt="NFPA Certification" class="h-16 w-auto mb-4">
+            <h3 class="font-semibold">NFPA Member</h3>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center text-center">
+            <img src="" alt="UL Listed" class="h-16 w-auto mb-4">
+            <h3 class="font-semibold">UL Listed Service</h3>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center text-center">
+            <img src="" alt="ISO 9001" class="h-16 w-auto mb-4">
+            <h3 class="font-semibold">ISO 9001 Certified</h3>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm flex flex-col items-center justify-center text-center">
+            <img src="" alt="Fire Marshal Association" class="h-16 w-auto mb-4">
+            <h3 class="font-semibold">Fire Marshal Approved</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- CTA Section -->
+    <section class="cta-section py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center text-white">
+          <h2 class="text-3xl font-bold mb-4">Ready to Work with Us?</h2>
+          <p class="text-xl mb-8">
+            Contact us today to discuss your fire protection needs and discover how we can help keep your property safe.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="Contact.html" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-red-700 transition-colors">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+              <div class="flex items-center mb-4">
+                <a href="Index.html" class="flex items-center space-x-2">
+                  <img src="Images/fotter.png" alt="Logo" class="h-[150px] w-auto">
+              </a>
+              </div>
+              <p class="text-gray-400 mb-6">
+                Providing comprehensive fire protection solutions for commercial,
+                industrial, and residential properties since 2003.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-facebook-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-twitter-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
+              </div>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Services.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Equipment.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Equipment</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="About.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Contact.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+                
+              </ul>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Fire Safety Systems</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Equipment Installation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Maintenance & Inspection</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Compliance & Certification</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Training Programs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Risk Assessment</a
+                  >
+                </li>
+              </ul>
+            </div>
+  
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-map-pin-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400"
+                    >Shpo no 5,Super Plaza Market Infront of Great Value Mall Ramghat Road, Aligarh</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-phone-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">+91 7017266299</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-mail-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">info@pragatifire.com</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                    <i class="ri-time-fill text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">Mon-Fri: 8:00 AM - 6:00 PM</span>
+                </li>
+              </ul>
+  
+              <div class="mt-6">
+                <h4 class="text-sm font-semibold mb-3">
+                  Subscribe to our newsletter
+                </h4>
+                <div class="flex">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    class="bg-gray-800 border-none text-white px-4 py-2 rounded-l focus:outline-none focus:ring-2 focus:ring-primary w-full"
+                  />
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-r hover:bg-red-700 transition-colors whitespace-nowrap"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div
+            class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+          >
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Pragati Fire Protection Services. All rights reserved.
+            </p>
+  
+            <div class="flex flex-wrap justify-center gap-4">
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-white transition-colors"
+                >Sitemap</a
+              >
+            </div>
+  
+            
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
